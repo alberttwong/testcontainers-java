@@ -33,7 +33,7 @@ public class SimpleStarRocksTest extends AbstractContainerDatabaseTest {
         ) { // StarRocks is expected to be compatible with MySQL
             starrocks.start();
 
-            ResultSet resultSet = performQuery(starrocks, "SELECT foo FROM bar");
+            ResultSet resultSet = performQuery(starrocks, "SELECT foo FROM demo.bar");
 
             String firstColumnValue = resultSet.getString(1);
             assertThat(firstColumnValue).isEqualTo("hello world");

@@ -13,7 +13,8 @@ public class StarRocksJDBCDriverTest extends AbstractJDBCDriverTest {
     @Parameterized.Parameters(name = "{index} - {0}")
     public static Iterable<Object[]> data() {
         return Arrays.asList(
-            new Object[][] { { "jdbc:mysql://hostname/databasename", EnumSet.noneOf(Options.class) } }
+            // mysql://hostname/databasename or mysql://hostname/catalog.databasename
+            new Object[][] { { "jdbc:tc:mysql://hostname/databasename", EnumSet.noneOf(Options.class) } }
         );
     }
 }
